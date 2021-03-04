@@ -9,11 +9,11 @@ Wrapper of XPdf Tools for C#
 
  ## Quick Example ##
  ```C#
-  using (var extract = ToolsFactory.NewPdf2Text)
+  using (var extractor = ToolsFactory.NewPdf2Text)
   {
-      extract.Raw = true;
-      extract.NoBreakPage = true;
-      var text = await extract.ExtractTextAsync("samples/sample.pdf");
-
+      extractor.Raw = true;
+      extractor.NoBreakPage = true;
+      
+      var text = await extractor.ExtractTextAsync("samples/sample.pdf");
       Console.WriteLine(text);
   }
