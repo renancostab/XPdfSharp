@@ -5,13 +5,11 @@ Wrapper of XPdf Tools for C#
  * Extraction of PDF text
 
 ## Roadmap: ##
- * Other tools related to xPDF such as 
-  ** pdftohtml 
-  ** pdftopng
+ * Other tools related to xPDF such as pdftohtml and pdftopng.
 
  ## Quick Example ##
  ```C#
-   using (var extract = ToolsFactory.NewPdf2Text)
+  using (var extract = ToolsFactory.NewPdf2Text)
   {
       extract.Raw = true;
       extract.NoBreakPage = true;
