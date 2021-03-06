@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>XPDFSharp</id>
+    <version>1.0.0</version>
+    <title>XPDFTools wrapper for C#</title>
+    <authors>Renan (RCB)</authors>
+    <owners/>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MPL-2.0</license>
+    <projectUrl>https://github.com/renancostab/XPdfSharp</projectUrl>
+    <description>C# Wrapper of XPDF Tools</description>
+    <releaseNotes>Implemented the Pdf2Text interface</releaseNotes>
+    <copyright>Copyright 2021</copyright>
+    <tags>PDF TextExtract XPDF</tags>
+  </metadata>
+  <files>
+    <file src="lib\**\*" target="build\xpdf" />
+    <file src="bin\Release\**\*.dll" target="lib" />
+    <file src="XPdfSharp.targets" target="build" />
+  </files>
+</package>

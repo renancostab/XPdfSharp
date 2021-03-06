@@ -1,42 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-		<TargetFrameworks>netcoreapp3.1;netstandard2.1</TargetFrameworks>
+    <PropertyGroup>	
+		<TargetFrameworks>netcoreapp3.1;netstandard2.1</TargetFrameworks>		
+		<NuspecFile>XPdfSharp.nuspec</NuspecFile>		
     </PropertyGroup>
 
-    <ItemGroup>
+	<ItemGroup>
 		<Folder Include="lib\linux" />
 		<Folder Include="lib\mac" />
-      	<Folder Include="lib\windows" />
-    </ItemGroup>
-
-    <ItemGroup>
-		<ContentWithTargetPath Include="lib\windows\pdftohtml.exe">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<TargetPath>pdftohtml.exe</TargetPath>
-		</ContentWithTargetPath>
-		<ContentWithTargetPath Include="lib\windows\pdftotext.exe">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<TargetPath>pdftotext.exe</TargetPath>
-		</ContentWithTargetPath>
-		
-		<ContentWithTargetPath Include="lib\linux\pdftohtml">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<TargetPath>linuxpdftohtml</TargetPath>
-		</ContentWithTargetPath>
-		<ContentWithTargetPath Include="lib\linux\pdftotext">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<TargetPath>linuxpdftotext</TargetPath>
-		</ContentWithTargetPath>		
-		
-		<ContentWithTargetPath Include="lib\mac\pdftohtml">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<TargetPath>macpdftohtml</TargetPath>
-		</ContentWithTargetPath>
-		<ContentWithTargetPath Include="lib\mac\pdftotext">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<TargetPath>macpdftotext</TargetPath>
-		</ContentWithTargetPath>				
-    </ItemGroup>
-
+		<Folder Include="lib\windows" />
+	</ItemGroup>
+	
+	<ItemGroup>		
+		<XPDFTools Include="lib\**\*.*" />
+		<none Include="@(XPDFTools)">
+		  <Link>%(FileName)%(Extension)</Link>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</none>		
+	</ItemGroup>	
 </Project>

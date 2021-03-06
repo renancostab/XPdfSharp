@@ -23,9 +23,9 @@ namespace XPdfSharp.Implementation.Utils
                 case Platform.Windows:
                     return string.Concat(programBase, ".exe");
                 case Platform.Linux:
-                    return string.Concat("linux", programBase);
+                    return string.Concat(programBase, ".linux");
                 case Platform.Osx:
-                    return string.Concat("mac", programBase);
+                    return string.Concat(programBase, ".mac");
                 case Platform.Unknown:                
                 default:
                     throw new Exception("OS not supported");
