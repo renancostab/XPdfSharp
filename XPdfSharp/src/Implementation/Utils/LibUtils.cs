@@ -10,6 +10,9 @@ namespace XPdfSharp.Implementation.Utils
         private const string DefaultExt = "tmp";
         private const string Quoted = "\"";
         private const string ArgumentEnd = " ";
+        private const string WindowsExtension = ".exe";
+        private const string LinuxExtension = ".linux";
+        private const string MacExtension = ".mac";
         
         public static string RandomFileName(string ext = DefaultExt) => $"{Guid.NewGuid()}.{ext}";
         public static string RandomTempFile(string ext = DefaultExt) => $"{Path.GetTempPath()}{RandomFileName(ext)}";
@@ -21,11 +24,11 @@ namespace XPdfSharp.Implementation.Utils
             switch (RuntimeInfo.OsEnvironment())
             {
                 case Platform.Windows:
-                    return string.Concat(programBase, ".exe");
+                    return string.Concat(programBase, WindowsExtension);
                 case Platform.Linux:
-                    return string.Concat(programBase, ".linux");
+                    return string.Concat(programBase, LinuxExtension);
                 case Platform.Osx:
-                    return string.Concat(programBase, ".mac");
+                    return string.Concat(programBase, MacExtension);
                 case Platform.Unknown:                
                 default:
                     throw new Exception("OS not supported");

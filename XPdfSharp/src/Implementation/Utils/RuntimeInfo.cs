@@ -9,8 +9,11 @@ namespace XPdfSharp.Implementation.Utils
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 return Platform.Windows;
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                return Platform.Linux;
             
-            return RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? Platform.Linux : Platform.Unknown;
+            return RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? Platform.Osx : Platform.Unknown;
         }
     }
 }
