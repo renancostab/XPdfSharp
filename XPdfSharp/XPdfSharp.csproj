@@ -2,8 +2,10 @@
     <PropertyGroup>	
 		<TargetFrameworks>netcoreapp3.1;netstandard2.1</TargetFrameworks>		
 		<NuspecFile>XPdfSharp.nuspec</NuspecFile>		
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>1591</NoWarn>				
     </PropertyGroup>
-
+	
 	<ItemGroup>
 		<Folder Include="lib\linux" />
 		<Folder Include="lib\mac" />
@@ -15,6 +17,6 @@
 		<none Include="@(XPDFTools)">
 		  <Link>%(FileName)%(Extension)</Link>
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</none>		
-	</ItemGroup>	
+		</none>			
+	</ItemGroup>
 </Project>
