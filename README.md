@@ -1,6 +1,9 @@
 # XPdfSharp
 Wrapper of XPdf Tools for C#
 
+## How Install ##
+Available at nuget [XPDFSharp](https://www.nuget.org/packages/XPDFSharp/)
+
 ## Features: ##
  * Extraction of PDF text
 
