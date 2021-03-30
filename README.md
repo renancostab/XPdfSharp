@@ -9,7 +9,7 @@ Available at nuget [XPDFSharp](https://www.nuget.org/packages/XPDFSharp/)
  * Print PDF to PNG files
 
 ## Roadmap: ##
- * Other tools related to xPDF such as pdftohtml and pdftopng.
+ * Other tools related to xPDF such as pdftohtml
 
  ## Quick Example ##
  ```C#
