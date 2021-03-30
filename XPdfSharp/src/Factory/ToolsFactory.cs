@@ -9,5 +9,7 @@ namespace XPdfSharp.Factory
         /// Create a new instance of IPdf2Text capable of extract text from a PDF
         /// </summary>
         public static IPdf2Text NewPdf2Text => new Pdf2Text();
+
+        public static IPdf2Png NewPdf2Png => new Pdf2Png();
     }
 }

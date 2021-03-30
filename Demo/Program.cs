@@ -20,6 +20,24 @@ namespace Demo
                 
                 Console.WriteLine(text);
             }
+            
+            Console.WriteLine();
+            
+            if (Directory.Exists("samples/images/"))
+                Directory.Delete("samples/images/", true);
+            
+            using (var images = ToolsFactory.NewPdf2Png)
+            {
+                images.Dpi = 75;
+                var result = await images.GenerateImagesAsync("samples/sample.pdf", "samples/images/");
+                
+                Console.WriteLine("Generated images success: {0} codeError: {1}", result == 0, result);
+                if (result != 0)
+                    return;
+
+                var files = Directory.GetFiles("samples/images/");
+                Console.WriteLine("Image Count: {0}", files.Length);
+            }
         }
     }
 }
