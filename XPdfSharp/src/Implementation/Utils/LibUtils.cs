@@ -24,11 +24,11 @@ namespace XPdfSharp.Implementation.Utils
             switch (RuntimeInfo.OsEnvironment())
             {
                 case Platform.Windows:
-                    return string.Concat(programBase, WindowsExtension);
+                    return string.Concat(WorkDirectory, programBase, WindowsExtension);
                 case Platform.Linux:
-                    return string.Concat(programBase, LinuxExtension);
+                    return string.Concat(WorkDirectory, programBase, LinuxExtension);
                 case Platform.Osx:
-                    return string.Concat(programBase, MacExtension);
+                    return string.Concat(WorkDirectory, programBase, MacExtension);
                 case Platform.Unknown:                
                 default:
                     throw new Exception("OS not supported");
