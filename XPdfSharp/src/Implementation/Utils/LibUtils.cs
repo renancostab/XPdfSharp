@@ -18,7 +18,7 @@ namespace XPdfSharp.Implementation.Utils
         public static string RandomTempFile(string ext = DefaultExt) => $"{Path.GetTempPath()}{RandomFileName(ext)}";
         public static string QuotedStr(string str) => string.Concat(Quoted, str, Quoted);
         public static string ParseParameters(IEnumerable<string> arguments) => string.Join(ArgumentEnd, arguments);
-        public static string WorkDirectory => Environment.CurrentDirectory;
+        public static string WorkDirectory => AppDomain.CurrentDomain.BaseDirectory;
         public static string GetProgramName(string programBase)
         {
             switch (RuntimeInfo.OsEnvironment())
