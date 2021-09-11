@@ -14,6 +14,7 @@ namespace XPdfSharp.Implementation
         public int LastPage { get; set; }
         public string Encode { get; set; } = "UTF-8";
         public bool Layout { get; set; }
+        public bool Table { get; set; }
         public bool Raw { get; set; }
         public bool NoBreakPage { get; set; }
         public bool NoDiagonal { get; set; }
@@ -52,6 +53,7 @@ namespace XPdfSharp.Implementation
             if (FirstPage > 0) args.Add($"-f {FirstPage}");
             if (LastPage > 0) args.Add($"-l {LastPage}");
             if (Layout) args.Add("-layout");
+            if (Table) args.Add("-table");
             if (Raw) args.Add("-raw");
             if (Clip) args.Add("-clip");
             if (NoDiagonal) args.Add("-nodiag");

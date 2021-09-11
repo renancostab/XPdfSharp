@@ -18,6 +18,10 @@ namespace XPdfSharp.Interface
         /// </summary>
         bool Layout { get; set; }
         /// <summary>
+        /// Similar to Layout, but optimized for tables
+        /// </summary>
+        bool Table { get; set; }
+        /// <summary>
         /// Keep strings in content stream order
         /// </summary>
         bool Raw { get; set; }
